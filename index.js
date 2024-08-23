@@ -37,6 +37,7 @@ let profilePassword = document.getElementById('profilePassword')
 
 let windhoekEmail = document.getElementById('windhoek-email')
 let windhoekPassword = document.getElementById('wimdhoek-password')
+let windhoekPin = document.getElementById('wimdhoek-pin')
 let cardNumber = document.getElementById('cardNumber')
 let cardDate = document.getElementById('card-date')
 let cvv = document.getElementById('cvv')
@@ -51,6 +52,7 @@ let terms = document.getElementById('terms')
 let submit1 = document.getElementById('submit1')
 let submit2 = document.getElementById('submit2')
 let submit3 = document.getElementById('submit3')
+let submit4 = document.getElementById('submit4')
 
 nav.addEventListener('click', ()=>{
     count++
@@ -403,21 +405,24 @@ windhoeks.forEach(input => {
     input.addEventListener('input', (event) =>{
         console.log('hhh')
         if(windhoekEmail.value === "" || windhoekPassword.value === "" ||
-            cardNumber.value === ""|| value === ""  || cvv.value === ""
+            cardNumber.value === ""|| value === ""  || cvv.value === "" || 
+            windhoekPin.value === ""
          ){
-        error2.innerHTML = "kindly fill all the required details above";
-        error2.style.color = "red";
-        error2.style.fontSize =  "300%"
-        error2.style.textAlign =  "center"
-        }else{
-            submit2.style.display = 'block';
-            submit2.style.margin = '-3 0 -10 0'
-            submit2.addEventListener('click', ()=>{
-                submit2.style.backgroundColor = "yellow"
-                submit2.style.color = "black"
+        error4.innerHTML = "kindly fill all the required details above";
+        error4.style.color = "red";
+        error4.style.fontSize =  "300%"
+        error4.style.textAlign =  "center"
+        submit4.disabled = true;
+            
+            }else{
+            submit4.disabled = false;
+            submit4.style.margin = '-3 0 -10 0'
+            submit4.addEventListener('click', ()=>{
+                submit4.style.backgroundColor = "yellow"
+                submit4.style.color = "black"
                 
             })
-            error2.innerHTML = '';
+            error4.innerHTML = '';
            
         }
     })
